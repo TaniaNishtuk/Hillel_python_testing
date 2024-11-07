@@ -103,9 +103,8 @@ print("-"*200)
 """
 beginning_to_search = "By the time"
 for sen in adwentures_of_tom_sawer_sentences:
-    sen_without_spaces = sen.lstrip()  # прибрала пробіл з початку речення щоб індексувати з 0 в if
-    if sen_without_spaces.startswith(beginning_to_search, 0):
-        print(f"Речення, яке починається з 'By the time':\n{sen_without_spaces}")
+    if sen.startswith(beginning_to_search, 0):
+        print(f"Речення, яке починається з 'By the time':\n{sen}")
 print("-"*200)
 
 # task 10
