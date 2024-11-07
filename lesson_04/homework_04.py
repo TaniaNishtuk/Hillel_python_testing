@@ -95,7 +95,7 @@ print("-"*200)
 Перетворіть рядок у нижній регістр.
 """
 # беру список речень та виводжу четверте з них по індексу 3, приводжу всі літери до нижнього регістру методом - lower
-print(f"Четверте речення: \n{adwentures_of_tom_sawer_sentences[3].lstrip().lower()}")
+print(f"Четверте речення: \n{adwentures_of_tom_sawer_sentences[3].lower()}")
 print("-"*200)
 
 # task 09
