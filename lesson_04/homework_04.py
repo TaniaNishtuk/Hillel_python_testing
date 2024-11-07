@@ -113,3 +113,4 @@ print("-"*200)
 
 sen_words_count = adwentures_of_tom_sawer_sentences[-1].split()
 print(f"Кількість слів в останньому реченні:\n{len(sen_words_count)}")  # 24
+
