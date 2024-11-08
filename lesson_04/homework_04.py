@@ -24,22 +24,22 @@ rolling in wealth."""
 """ Дані у строці adwentures_of_tom_sawer розбиті випадковим чином, через помилку.
 треба замінити кінець абзацу на пробіл .replace("\n", " ")"""
 
-adwentures_of_tom_sawer_without_n = adwentures_of_tom_sawer.replace("\n", " ")
-print(adwentures_of_tom_sawer_without_n)
+adwentures_of_tom_sawer = adwentures_of_tom_sawer.replace("\n", " ")
+print(adwentures_of_tom_sawer)
 print("-"*200)
 # task 02 ==
 """ Замініть .... на пробіл
 """
-adwentures_of_tom_sawer_without_tripple_dots = adwentures_of_tom_sawer_without_n.replace("....", " ")
-print(adwentures_of_tom_sawer_without_tripple_dots)
+adwentures_of_tom_sawer = adwentures_of_tom_sawer.replace("....", " ")
+print(adwentures_of_tom_sawer)
 print("-"*200)
 
 # task 03 ==
 """ Зробіть так, щоб у тексті було не більше одного пробілу між словами.
 """
-reformatted_text = ' '.join(adwentures_of_tom_sawer_without_tripple_dots.split())
+adwentures_of_tom_sawer = ' '.join(adwentures_of_tom_sawer.split())
 print(f"Текст без зайвих пробілів, '....'  та без '\\n', "
-      f"я використовуватиму його у декількох наступних завданнях для зручності:\n{reformatted_text}")
+      f"я використовуватиму його у декількох наступних завданнях для зручності:\n{adwentures_of_tom_sawer}")
 print("-"*200)
 
 # task 04
@@ -53,11 +53,9 @@ print("-"*200)
 # task 05
 """ Виведіть, скільки слів у тексті починається з Великої літери?
 """
-# у 60 рядку перевиокристовую змінну створену у третьому завданні, щоб не дублювати код - reformatted_text
-# таким чином я буду перевіряти вже відформатований текст без зайвих символів
 big_letter_counter = 0
 upper_words = []
-list_of_words = reformatted_text.split(" ")
+list_of_words = adwentures_of_tom_sawer.replace('"', "").split(" ")#додала заміну лапок, щоб врахувало Big
 for item in list_of_words:
     if item[0].isupper():   # тут я перевіряю чи перша буква кожного слова велика
         upper_words.append(item)  # додаю кожне слово в список, якщо воно з великої літери
@@ -82,11 +80,9 @@ print("-"*200)
 """ Розділіть змінну adwentures_of_tom_sawer по кінцю речення.
 Збережіть результат у змінній adwentures_of_tom_sawer_sentences
 """
-# у 89 рядку перевиокристовую змінну створену у третьому завданні, щоб не дублювати код - reformatted_text
-# таким чином я буду перевіряти вже відформатований текст без зайвих символів
 # роздільником беру ". " в кінці кожного речення
 # ". " щоб у кінці створеного списку з реченнями не додавався зайвий пустий елемент, як при розділенні по крапці
-adwentures_of_tom_sawer_sentences = reformatted_text.split(". ")
+adwentures_of_tom_sawer_sentences = adwentures_of_tom_sawer.split(". ")
 print(f"Список усіх речень у тексті:\n{adwentures_of_tom_sawer_sentences}")
 print("-"*200)
 
@@ -112,5 +108,6 @@ print("-"*200)
 """
 
 sen_words_count = adwentures_of_tom_sawer_sentences[-1].split()
+print(sen_words_count)
 print(f"Кількість слів в останньому реченні:\n{len(sen_words_count)}")  # 24
 
