@@ -32,13 +32,9 @@ print(f"Swapped list of records\n {people_records}")
 # 3 - check that all people in modified list with records indexes 6, 10, 13
 #   have age >=30. Print condition check result
 indexes_to_check = [6, 10, 13]
-# Loop through each index and check if the age is >= 30
+each_person_above_30 = True  # by default i assume it is -  True
 for i in indexes_to_check:
     if people_records[i][2] >= 30:
-        print(f"Person at index {i} is 30 or older: "
-              f"{people_records[i][0]} {people_records[i][1]}, "
-              f"Age: {people_records[i][2]}")
-    else:
-        print(f"Person at index {i} is younger than 30: "
-              f"{people_records[i][0]} {people_records[i][1]}, "
-              f"Age: {people_records[i][2]}")
+        each_person_above_30 = False  # if one of the people under specified indexes is under 30 years old - False
+print(f"Result: {each_person_above_30}")
+
