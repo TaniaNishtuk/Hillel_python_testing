@@ -7,6 +7,6 @@ while True:
     input_from_user = input("Введіть слово, яке містить хоча б одну букву 'h' або 'H': ")
     if 'h' in input_from_user.lower():
         print("Дякую, ви ввели правильне слово.")
-        break
+        break  # завершиться, якщо отримав букву 'h'
     else:
         print("Слово не містить букви 'h'.")
