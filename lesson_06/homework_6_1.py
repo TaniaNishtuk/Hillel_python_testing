@@ -12,3 +12,4 @@ if len(unique_items) > 10:
 else:
     condition = False
     print(f"nope, there is less than 10 unique items in this set: {condition}")
+
