@@ -54,7 +54,7 @@ def return_some_number(list_of_numbers: list) -> float:
 
 
 random_list = [i for i in range(1, 5)]
-print(f"return_some_number: {return_some_number(random_list)}")
+print(f"Середнє арифметичне: {return_some_number(random_list)}")
 # task 4
 """  Написати функцію, яка приймає рядок та повертає його у зворотному порядку.
 """
@@ -65,7 +65,7 @@ def reversed_string(user_input: str) -> str:
     return user_input[::-1]
 
 
-print(f"{reversed_string(input('Hey, how was your day?:'))}")
+print(f"Обернений рядок: {reversed_string(input('Hey, how was your day?:'))}")
 # task 5
 """  Написати функцію, яка приймає список слів та повертає найдовше слово у списку.
 """
