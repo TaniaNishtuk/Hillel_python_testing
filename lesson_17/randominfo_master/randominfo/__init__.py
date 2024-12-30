@@ -8,6 +8,7 @@ from datetime import datetime
 from PIL import Image, ImageDraw, ImageFont
 from math import ceil
 
+import pandas as pd
 
 __title__ = 'randominfo'
 __version__ = '2.0.2'
@@ -259,8 +260,13 @@ def get_birthdate(startAge = None, endAge = None, _format = "%d %b, %Y"):
 
 def get_address():
 	full_addr = []
-	addrParam = ['street', 'landmark', 'area', 'city', 'state', 'country', 'pincode']
-	for i in range(5,12):
+	addrParam = ['street', 'landmark', 'area', 'city', 'state', 'pincode']
+
+	def count_columns_pandas():
+		df = pd.read_csv(full_path('data.csv'), nrows=1)
+		return len(df.columns)
+
+	for i in range(4,count_columns_pandas()): # stating from 4 index which is equal to 'street' and to number of columns in file
 		addrFile = csv.reader(open(full_path('data.csv'), 'r'))
 		allAddrs = []
 		for addr in addrFile:
@@ -271,6 +277,7 @@ def get_address():
 				pass
 		full_addr.append(choice(allAddrs))
 	full_addr = dict(zip(addrParam, full_addr))
+	print(full_addr) # for local debug
 	return full_addr
 
 def get_hobbies():
